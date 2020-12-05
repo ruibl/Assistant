@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.assistant">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/sh1"
+        android:label="一点通家校助手"
+        android:roundIcon="@mipmap/sh"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SleaveresultActivity"></activity>
+        <activity android:name=".ScheckleaveActivity" />
+        <activity android:name=".bottomActivity" />
+        <activity android:name=".SleavelistActivity" />
+        <activity android:name=".SetActivity" />
+        <activity android:name=".QR_codeActivity" />
+        <activity android:name=".pregActivity" />
+        <activity android:name=".tregActivity" />
+        <activity android:name=".sregActivity" />
+        <activity android:name=".leaveActivity" />
+        <activity android:name=".loginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

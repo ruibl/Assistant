@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".learn">
+
+    <TextView
+        android:id="@+id/learn_top"
+        android:text="家校功能"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:stretchColumns="*">
+
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/imb_kcb"
+                android:layout_width="1dip"
+                android:layout_height="130dip"
+                android:scaleType="fitCenter"
+                android:src="@drawable/kcb"
+                >
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/imb_zy"
+                android:layout_width="55dp"
+                android:layout_height="130dip"
+                android:scaleType="fitCenter"
+                android:src="@drawable/zy">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/imb_qj"
+                android:layout_width="52dp"
+                android:layout_height="130dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/qj">
+
+            </ImageButton>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="课程表"
+                android:gravity="center"
+                />
+            <TextView
+                android:text="作业"
+                android:gravity="center"
+                />
+            <TextView
+                android:text="请假"
+                android:gravity="center"
+                />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/imb_qd"
+                android:layout_width="1dip"
+                android:layout_height="130dip"
+                android:scaleType="fitCenter"
+                android:src="@drawable/qd"
+                >
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/imb_wk"
+                android:layout_height="130dip"
+                android:scaleType="fitCenter"
+                android:layout_width="1dip"
+                android:src="@drawable/wk"
+                >
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/imb_yd"
+                android:layout_width="1dip"
+                android:layout_height="130dip"
+                android:scaleType="fitCenter"
+                android:src="@drawable/yd"
+                >
+
+            </ImageButton>
+
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="签到"
+                android:gravity="center"
+                />
+            <TextView
+                android:text="课程资料"
+                android:gravity="center"
+                />
+            <TextView
+                android:text="阅读"
+                android:gravity="center"
+                />
+
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
+</LinearLayout>

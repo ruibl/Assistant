@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Homepage">
+
+    <TextView
+        android:text="校内新闻"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:id="@+id/news"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+    </ImageButton>
+
+    <TextView
+        android:text="校内公告"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:id="@+id/notion"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+    </ImageButton>
+
+    <TextView
+        android:text="校内活动"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:id="@+id/act"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+    </ImageButton>
+
+</LinearLayout>
