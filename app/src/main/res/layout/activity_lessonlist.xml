@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LessonActivity"
+    tools:context=".LessonlistActivity"
     android:stretchColumns="0,3"
     android:background="#FAFCFA"
-    android:id="@+id/LessonlinearLayout"
+    android:id="@+id/LessonlistlinearLayout"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/sLesson_top"
+        android:id="@+id/lessonlist_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -19,7 +19,7 @@
 
 
     <TableLayout
-        android:id="@+id/Lessontablelayout"
+        android:id="@+id/lessonlisttablelayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#F9FCF9"
@@ -27,14 +27,14 @@
         >
 
         <TableRow
-            android:id="@+id/Lessontablerow"
+            android:id="@+id/lessonlisttablerow"
             >
 
         </TableRow>
 
     </TableLayout>
     <TextView
-        android:id="@+id/laresult"
+        android:id="@+id/lea_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

@@ -150,7 +150,11 @@ public class SleaveresultActivity extends AppCompatActivity {
                     String sql1 ="delete from Leave where Lno='"+LID+"'";
                     Log.i("Ex04","delete="+sql1);
                     db1.execSQL(sql1);
-                    Intent intent=new Intent(SleaveresultActivity.this,loginActivity.class);
+                    Intent intent=new Intent(SleaveresultActivity.this,SleavelistActivity.class);
+                    Bundle bundle=new Bundle();
+                    bundle.putString("SID",ID);
+                    bundle.putString("TYPE",TYPE);
+                    intent.putExtras(bundle);
                     startActivity(intent);
                 }
             });

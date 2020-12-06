@@ -64,12 +64,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(sqllessoninfo);
         /*学生选课表*/
         String sqlSslesson="CREATE TABLE Sslesson(" +
-                "Sslessonno text primary key," +
-                "Sslessonna text not null," +
+                "SNo text not null," +
                 "Lessonno text not null," +
                 "Lessonna text not null," +
                 "LessonteachId text not null," +
-                "Lessonteachna text not null);";
+                "primary key(SNo,LessonteachId));";
         Log.i("Exo4:","createDB="+sqlSslesson);
         db.execSQL(sqlSslesson);
 

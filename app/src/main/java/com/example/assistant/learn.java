@@ -76,13 +76,28 @@ public class learn extends Fragment {
             @Override
             public void onClick(View v) {
                 if(TYPE.equals("学生")){
-
+                    Intent intent=new Intent(getActivity(),LessonActivity.class);
+                    Bundle bundle=new Bundle();
+                    bundle.putString("SID",ID);
+                    bundle.putString("TYPE",TYPE);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
                 }
                 else if(TYPE.equals("教师")){
-
+                    Intent intent=new Intent(getActivity(),LessonActivity.class);
+                    Bundle bundle=new Bundle();
+                    bundle.putString("SID",ID);
+                    bundle.putString("TYPE",TYPE);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
                 }
                 else if(TYPE.equals("家长")){
-
+                    Intent intent=new Intent(getActivity(),LessonActivity.class);
+                    Bundle bundle=new Bundle();
+                    bundle.putString("SID",ID);
+                    bundle.putString("TYPE",TYPE);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
                 }
             }
         });

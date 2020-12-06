@@ -1,6 +1,4 @@
 package com.example.assistant;
-
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 public class tregActivity extends AppCompatActivity {
     private Button t_but1;
     private Button t_but2;
@@ -25,7 +22,6 @@ public class tregActivity extends AppCompatActivity {
     private EditText t_etPw;
     private EditText t_etcl;
     private TextView tvResult;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,21 +53,12 @@ public class tregActivity extends AppCompatActivity {
         SQLiteDatabase db=helper.getWritableDatabase();
         String sql="Insert into Teacher(TNo,Tpwd,TName,Tphone,Tclass) values(?,?,?,?,?)";
         Log.i("Ex04","insert="+sql);
-
         String strNo=t_etNo.getText().toString();
         String strPw=t_etPw.getText().toString();
         String strNa=t_etNa.getText().toString();
         String strPh=t_etPh.getText().toString();
         String strcl=t_etcl.getText().toString();
-
-
         db.execSQL(sql,new Object[]{strNo,strPw,strNa,strPh,strcl});
-
-        /*db.execSQL(sql,new Object[]{strNa});
-        db.execSQL(sql,new Object[]{strPh});
-        db.execSQL(sql,new Object[]{strPw});*/
         tvResult.setText("注册成功！");
     }
-
-
 }

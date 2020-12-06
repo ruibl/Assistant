@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddlessonActivity"
+    android:stretchColumns="0,3"
+    android:gravity="center_vertical"
+    android:background="#FAFCFA"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:text="添加课程系统" />
+
+
+    <TableRow>
+        <TextView />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="课程号:" />
+        <EditText
+            android:id="@+id/Lessonno"
+            android:layout_width="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:layout_height="wrap_content"
+            android:minWidth="150dp"/>
+        <TextView />
+    </TableRow>
+    <TableRow>
+        <TextView />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="课程名:"
+            />
+        <EditText
+            android:id="@+id/Lessonna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:minWidth="150dp"
+            />
+        <TextView />
+    </TableRow>
+
+    <TableRow>
+        <TextView />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学  分:"
+            />
+        <EditText
+            android:id="@+id/Lessonscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:minWidth="150dp"
+            />
+        <TextView />
+    </TableRow>
+    <TableRow>
+        <TextView />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="任课教师:"
+            />
+        <EditText
+            android:id="@+id/LessonteachId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:minWidth="150dp"
+            />
+        <TextView />
+    </TableRow>
+    <TableRow>
+        <TextView />
+        <Button
+            android:id="@+id/al_but1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加"/>
+        <Button
+            android:id="@+id/al_but2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退出"/>
+        <TextView />
+    </TableRow>
+
+    <TextView
+        android:id="@+id/alResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+</TableLayout>
