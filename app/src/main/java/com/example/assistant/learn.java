@@ -37,6 +37,7 @@ public class learn extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         learn_top=getActivity().findViewById(R.id.learn_top);
+        /*请假功能*/
         ImageButton imb_qj=getActivity().findViewById(R.id.imb_qj);
         imb_qj.setOnClickListener(new View.OnClickListener() {
             @Override

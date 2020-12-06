@@ -56,7 +56,7 @@
         <TableRow>
 
             <TextView
-                android:text="课程表"
+                android:text="课程"
                 android:gravity="center"
                 />
             <TextView

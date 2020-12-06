@@ -14,7 +14,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        /*教师信息数据库*/
         String sqlt="CREATE TABLE Teacher(" +
                 "TNo text primary key," +
                 "Tpwd text not null," +
@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "Tclass text not null);";
         Log.i("Exo4:","createDB="+sqlt);
         db.execSQL(sqlt);
-
+        /*学生数据库*/
         String sqls="CREATE TABLE Student(" +
                 "SNo text primary key," +
                 "SName text not null," +
@@ -32,7 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "Spwd text not null);";
         Log.i("Exo4:","createDB="+sqls);
         db.execSQL(sqls);
-
+        /*家长数据库*/
         String sqlp="CREATE TABLE Parents(" +
                 "Pname text primary key," +
                 "Ppwd text not null," +
@@ -41,7 +41,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "PSname text not null);";
         Log.i("Exo4:","createDB="+sqlp);
         db.execSQL(sqlp);
-
+        /*请假条数据库*/
         String sqlleave="CREATE TABLE Leave(" +
                 "Lno text primary key," +
                 "Lna text not null," +
@@ -54,6 +54,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "Lts text);";
         Log.i("Exo4:","createDB="+sqlleave);
         db.execSQL(sqlleave);
+        /*课程信息数据库*/
+        String sqllessoninfo="CREATE TABLE Lessoninfo(" +
+                "Lessonno text primary key," +
+                "Lessonna text not null," +
+                "Lessonscore text not null," +
+                "LessonteachId text not null);";
+        Log.i("Exo4:","createDB="+sqllessoninfo);
+        db.execSQL(sqllessoninfo);
+        /*学生选课表*/
+        String sqlSslesson="CREATE TABLE Sslesson(" +
+                "Sslessonno text primary key," +
+                "Sslessonna text not null," +
+                "Lessonno text not null," +
+                "Lessonna text not null," +
+                "LessonteachId text not null," +
+                "Lessonteachna text not null);";
+        Log.i("Exo4:","createDB="+sqlSslesson);
+        db.execSQL(sqlSslesson);
+
+
+
 
 
 
