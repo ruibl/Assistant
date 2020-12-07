@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddHomeworkActivity"
+    android:stretchColumns="0,3"
+    android:gravity="center_vertical"
+    android:background="#FAFCFA"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:text="发放作业系统" />
+
+
+    <TableRow>
+        <TextView />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="作业名:" />
+        <EditText
+            android:id="@+id/H_Na"
+            android:layout_width="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:layout_height="wrap_content"
+            android:minWidth="150dp"/>
+        <TextView />
+    </TableRow>
+    <TableRow>
+        <TextView />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="相关课程:" />
+        <EditText
+            android:id="@+id/H_Lessonna"
+            android:layout_width="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:layout_height="wrap_content"
+            android:minWidth="150dp"/>
+        <TextView />
+    </TableRow>
+
+
+    <TableRow>
+        <TextView />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="作业内容:"
+            />
+        <EditText
+            android:id="@+id/H_File"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:background="@android:drawable/edit_text"
+            android:enabled="true"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:maxLines="10"
+            android:minLines="8"
+            android:textSize="10dp"
+            android:scrollbars="vertical">
+        </EditText>
+        <TextView />
+    </TableRow>
+    <TableRow>
+        <TextView />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传教师:"
+            />
+        <EditText
+            android:id="@+id/H_Tid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:minWidth="150dp"
+            />
+        <TextView />
+    </TableRow>
+    <TableRow>
+        <TextView />
+        <Button
+            android:id="@+id/H_but1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发放"/>
+        <Button
+            android:id="@+id/H_but2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退出"/>
+        <TextView />
+    </TableRow>
+
+    <TextView
+        android:id="@+id/HResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+</TableLayout>

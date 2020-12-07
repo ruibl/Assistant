@@ -71,6 +71,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "primary key(SNo,LessonteachId));";
         Log.i("Exo4:","createDB="+sqlSslesson);
         db.execSQL(sqlSslesson);
+        /*作业表*/
+        String sqlHomework="CREATE TABLE Homework(" +
+                "HNa text primary key," +
+                "Lessonna text not null," +
+                "HF text not null," +
+                "Answer text not null," +
+                "Sid text not null," +
+                "Tid text not null," +
+                "Sright text," +
+                "Tright text," +
+                "Hscore text);";
+        Log.i("Exo4:","createDB="+sqlHomework);
+        db.execSQL(sqlHomework);
+
+
 
 
 

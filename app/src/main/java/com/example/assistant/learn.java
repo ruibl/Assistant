@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.annotation.Nullable;
@@ -101,8 +102,55 @@ public class learn extends Fragment {
                 }
             }
         });
+        /*作业功能*/
+        ImageButton imb_zy=getActivity().findViewById(R.id.imb_zy);
+        imb_zy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(TYPE.equals("学生")){
+                    Intent intent=new Intent(getActivity(),HomeworklistActivity.class);
+                    Bundle bundle=new Bundle();
+                    bundle.putString("SID",ID);
+                    bundle.putString("TYPE",TYPE);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
+                else if(TYPE.equals("教师")){
+                    Intent intent=new Intent(getActivity(),HomeworklistActivity.class);
+                    Bundle bundle=new Bundle();
+                    bundle.putString("SID",ID);
+                    bundle.putString("TYPE",TYPE);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
+                else{
+                    Intent intent=new Intent(getActivity(),HomeworklistActivity.class);
+                    Bundle bundle=new Bundle();
+                    bundle.putString("SID",ID);
+                    bundle.putString("TYPE",TYPE);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                    //Toast.makeText(getActivity().getApplicationContext(),"抱歉，该版本暂不支持家长查看作业的功能，敬请期待！",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        /*签到功能*/
+        ImageButton imb_qd=getActivity().findViewById(R.id.imb_qd);
+        imb_qd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*学生点击签到可进行签到，将自己的学号和已签到写到数据库*/
+                if(TYPE.equals("学生")){
 
+                }
+                /*教师可查看签到人数，和已签到名单*/
+                else if(TYPE.equals("教师")){
+
+                }
+                else{
+                    Toast.makeText(getActivity().getApplicationContext(),"抱歉，该版本暂不支持家长签到的功能，敬请期待！",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
-
-
 }

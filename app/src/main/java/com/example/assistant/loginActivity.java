@@ -169,8 +169,6 @@ public class loginActivity extends AppCompatActivity {
                     }
 
                 }
-
-
                 /*while(cursor.moveToNext()){
                     s.append(cursor.getString(cursor.getColumnIndex("TNo"))+"\t");
                     s.append(cursor.getString(cursor.getColumnIndex("Tpwd"))+"\n");

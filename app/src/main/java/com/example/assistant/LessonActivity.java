@@ -75,14 +75,16 @@ public class LessonActivity extends AppCompatActivity {
             final String [] sll=studentlesssonlist.split(",");
             if(i!=0){/*学生有选课*/
                 for(int j=0;j<sll.length;j++){
+                    TableRow tableRow=new TableRow(this);
+                    Lessontablelayout.addView(tableRow);
                     TextView tx0=new TextView(this);
-                    Lessontablerow.addView(tx0);
+                    tableRow.addView(tx0);
                     final TextView tx1=new TextView(this);
                     tx1.setText(sll[j]);
-                    Lessontablerow.addView(tx1);
+                    tableRow.addView(tx1);
                     Button but1=new Button(this);
                     but1.setText("退课");
-                    Lessontablerow.addView(but1);
+                    tableRow.addView(but1);
                     but1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -94,7 +96,7 @@ public class LessonActivity extends AppCompatActivity {
                         }
                     });
                     TextView tx2=new TextView(this);
-                    Lessontablerow.addView(tx2);
+                    tableRow.addView(tx2);
                 }
             }
             else{/*学生无选课*/
@@ -103,6 +105,20 @@ public class LessonActivity extends AppCompatActivity {
                 TextView tx1=new TextView(this);
                 tx1.setText("你还没有选课！");
                 Lessontablerow.addView(tx1);
+                Button but2=new Button(this);
+                but2.setText("退出");
+                Lessontablerow.addView(but2);
+                but2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(LessonActivity.this,bottomActivity.class);
+                        Bundle bundle=new Bundle();
+                        bundle.putString("SID",ID);
+                        bundle.putString("TYPE",TYPE);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+                });
                 TextView tx2=new TextView(this);
                 Lessontablerow.addView(tx2);
             }
@@ -157,14 +173,16 @@ public class LessonActivity extends AppCompatActivity {
             String [] sllt=studentSelectedlist.split(",");
             if(i!=0){/*有学生选了本教师的课，列表显示*/
                 for(int j=0;j<sllt.length;j++){
+                    TableRow tableRow=new TableRow(this);
+                    Lessontablelayout.addView(tableRow);
                     TextView tx0=new TextView(this);
-                    Lessontablerow.addView(tx0);
+                    tableRow.addView(tx0);
                     final TextView tx1=new TextView(this);
                     tx1.setText(sllt[j]);
-                    Lessontablerow.addView(tx1);
+                    tableRow.addView(tx1);
                     Button but1=new Button(this);
                     but1.setText("踢出");
-                    Lessontablerow.addView(but1);
+                    tableRow.addView(but1);
                     but1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -176,7 +194,7 @@ public class LessonActivity extends AppCompatActivity {
                         }
                     });
                     TextView tx2=new TextView(this);
-                    Lessontablerow.addView(tx2);
+                    tableRow.addView(tx2);
                 }
             }
             else{/*学生无选课*/
@@ -185,6 +203,20 @@ public class LessonActivity extends AppCompatActivity {
                 TextView tx1=new TextView(this);
                 tx1.setText("没有学生选您的课！");
                 Lessontablerow.addView(tx1);
+                Button but2=new Button(this);
+                but2.setText("退出");
+                Lessontablerow.addView(but2);
+                but2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(LessonActivity.this,bottomActivity.class);
+                        Bundle bundle=new Bundle();
+                        bundle.putString("SID",ID);
+                        bundle.putString("TYPE",TYPE);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+                });
                 TextView tx2=new TextView(this);
                 Lessontablerow.addView(tx2);
             }
@@ -227,16 +259,18 @@ public class LessonActivity extends AppCompatActivity {
                 String [] Plt=Pviewlist.split(",");
                 if(i!=0){/*孩子选的课列表显示*/
                     for(int j=0;j<Plt.length;j++){
+                        TableRow tableRow=new TableRow(this);
+                        Lessontablelayout.addView(tableRow);
                         TextView tx0=new TextView(this);
-                        Lessontablerow.addView(tx0);
+                        tableRow.addView(tx0);
                         final TextView tx1=new TextView(this);
                         tx1.setText(Plt[j]);
-                        Lessontablerow.addView(tx1);
+                        tableRow.addView(tx1);
                         Button but1=new Button(this);
                         but1.setText("好评");
-                        Lessontablerow.addView(but1);
+                        tableRow.addView(but1);
                         TextView tx2=new TextView(this);
-                        Lessontablerow.addView(tx2);
+                        tableRow.addView(tx2);
                     }
                 }
                 else{/*学生无选课*/
@@ -245,6 +279,20 @@ public class LessonActivity extends AppCompatActivity {
                     TextView tx1=new TextView(this);
                     tx1.setText("您的孩子还没有选课");
                     Lessontablerow.addView(tx1);
+                    Button but2=new Button(this);
+                    but2.setText("退出");
+                    Lessontablerow.addView(but2);
+                    but2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent=new Intent(LessonActivity.this,bottomActivity.class);
+                            Bundle bundle=new Bundle();
+                            bundle.putString("SID",ID);
+                            bundle.putString("TYPE",TYPE);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
                     TextView tx2=new TextView(this);
                     Lessontablerow.addView(tx2);
                 }

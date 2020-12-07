@@ -31,6 +31,11 @@ public class bottomActivity extends AppCompatActivity implements View.OnClickLis
     }
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){//判断我们点击的是哪一个菜单项
+            case R.id.relogin_item:  //点击重新登陆
+                Intent intent1=new Intent(bottomActivity.this,loginActivity.class);
+                startActivity(intent1);
+                break;
+
             case R.id.set_item:  //点击设置
                 Intent intent0 = new Intent(bottomActivity.this, SetActivity.class);
                 startActivity(intent0);

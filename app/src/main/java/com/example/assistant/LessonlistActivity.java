@@ -63,11 +63,13 @@ public class LessonlistActivity extends AppCompatActivity {
             final String [] ll=lessonlist.split(",");
             if(i!=0){
                 for(int j=0;j<ll.length;j++){
+                    TableRow tableRow=new TableRow(this);
+                    lessonlisttablelayout.addView(tableRow);
                     TextView tx0=new TextView(this);
-                    lessonlisttablerow.addView(tx0);
+                    tableRow.addView(tx0);
                     final TextView tx1=new TextView(this);
                     tx1.setText(ll[j]);
-                    lessonlisttablerow.addView(tx1);
+                    tableRow.addView(tx1);
                     /*从数据库中查询看此学生是否选了此课程*/
                     SQLiteDatabase db1=helper.getWritableDatabase();
                     final String sql1="select * from Sslesson  where Lessonna='"+ll[j]+"'and SNo='"+ID+"'";/*看本选课同学是否选了此课程*/
@@ -86,13 +88,13 @@ public class LessonlistActivity extends AppCompatActivity {
                     if(m!=0){/*这个学生已经选了这门课了*/
                         Button Bselect=new Button(this);
                         Bselect.setText("已选课");
-                        lessonlisttablerow.addView(Bselect);
+                        tableRow.addView(Bselect);
                         Toast.makeText(getApplicationContext(),"你不能重复选课！",Toast.LENGTH_SHORT).show();
                     }
                     else{/*这个学生没有选这门课*/
                         final Button Bselect=new Button(this);
                         Bselect.setText("选课");
-                        lessonlisttablerow.addView(Bselect);
+                        tableRow.addView(Bselect);
                         Bselect.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -134,7 +136,7 @@ public class LessonlistActivity extends AppCompatActivity {
                         });
                     }
                     TextView tx2=new TextView(this);
-                    lessonlisttablerow.addView(tx2);
+                    tableRow.addView(tx2);
                 }
             }
             else{
@@ -168,14 +170,16 @@ public class LessonlistActivity extends AppCompatActivity {
             String [] Tll=Tlessonlist.split(",");
             if(i!=0){/*这个老师添加了课程*/
                 for(int j=0;j<Tll.length;j++){
+                    TableRow tableRow=new TableRow(this);
+                    lessonlisttablelayout.addView(tableRow);
                     TextView tx0=new TextView(this);
-                    lessonlisttablerow.addView(tx0);
+                    tableRow.addView(tx0);
                     TextView tx1=new TextView(this);
                     tx1.setText(Tll[j]);
-                    lessonlisttablerow.addView(tx1);
+                    tableRow.addView(tx1);
                     Button but1=new Button(this);
                     but1.setText("删除");
-                    lessonlisttablerow.addView(but1);
+                    tableRow.addView(but1);
                     but1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -187,20 +191,22 @@ public class LessonlistActivity extends AppCompatActivity {
                         }
                     });
                     TextView tx2=new TextView(this);
-                    lessonlisttablerow.addView(tx2);
+                    tableRow.addView(tx2);
                 }
 
 
             }
             else{
+                TableRow tableRow=new TableRow(this);
+                lessonlisttablelayout.addView(tableRow);
                 TextView tx0=new TextView(this);
-                lessonlisttablerow.addView(tx0);
+                tableRow.addView(tx0);
                 TextView tx1=new TextView(this);
                 tx1.setText("您还未添加课程");
-                lessonlisttablerow.addView(tx1);
+                tableRow.addView(tx1);
                 Button but1=new Button(this);
                 but1.setText("添加课程");
-                lessonlisttablerow.addView(but1);
+                tableRow.addView(but1);
                 but1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -213,7 +219,7 @@ public class LessonlistActivity extends AppCompatActivity {
                     }
                 });
                 TextView tx2=new TextView(this);
-                lessonlisttablerow.addView(tx2);
+                tableRow.addView(tx2);
             }
         }
         else if(TYPE.equals("家长")){

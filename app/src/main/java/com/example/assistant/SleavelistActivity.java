@@ -85,14 +85,16 @@ public class SleavelistActivity extends AppCompatActivity {
             String [] li=leaveinfo.split(",");
             if(i!=0){
                 if(li[1].equals("同意") && li[2].equals("同意")){
+                    TableRow tableRow=new TableRow(this);
+                    tableLayout1.addView(tableRow);
                     TextView tx0=new TextView(this);
-                    tablerow1.addView(tx0);
+                    tableRow.addView(tx0);
                     TextView tx1=new TextView(this);
                     tx1.setText("你的请假条已通过审批");
-                    tablerow1.addView(tx1);
+                    tableRow.addView(tx1);
                     Button but1=new Button(this);
                     but1.setText("查看");
-                    tablerow1.addView(but1);
+                    tableRow.addView(but1);
                     but1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -106,7 +108,7 @@ public class SleavelistActivity extends AppCompatActivity {
                         }
                     });
                     TextView tx2=new TextView(this);
-                    tablerow1.addView(tx2);
+                    tableRow.addView(tx2);
                 }
                 else if(li[1].equals("0") || li[2].equals("0")){
                     /*TextView tx0=new TextView(this);
@@ -114,32 +116,34 @@ public class SleavelistActivity extends AppCompatActivity {
                     TextView tx1=new TextView(this);
                     tx1.setText("你的请假条正在审批");
                     tablerow1.addView(tx1);
-                    /*Button but1=new Button(this);
-                    but1.setText("查看");
-                    tablerow1.addView(but1);
-                    but1.setOnClickListener(new View.OnClickListener() {
+                    Button but2=new Button(this);
+                    but2.setText("退出");
+                    tablerow1.addView(but2);
+                    but2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intent=new Intent(SleavelistActivity.this,SleaveresultActivity.class);
+                            Intent intent=new Intent(SleavelistActivity.this,bottomActivity.class);
                             Bundle bundle=new Bundle();
                             bundle.putString("SID",ID);
                             bundle.putString("TYPE",TYPE);
                             intent.putExtras(bundle);
                             startActivity(intent);
                         }
-                    });*/
+                    });
                     TextView tx2=new TextView(this);
                     tablerow1.addView(tx2);
                 }
                 else{
+                    TableRow tableRow=new TableRow(this);
+                    tableLayout1.addView(tableRow);
                     TextView tx0=new TextView(this);
-                    tablerow1.addView(tx0);
+                    tableRow.addView(tx0);
                     TextView tx1=new TextView(this);
                     tx1.setText("你的请假条未通过审批");
-                    tablerow1.addView(tx1);
+                    tableRow.addView(tx1);
                     Button but1=new Button(this);
                     but1.setText("查看");
-                    tablerow1.addView(but1);
+                    tableRow.addView(but1);
                     but1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -153,7 +157,7 @@ public class SleavelistActivity extends AppCompatActivity {
                         }
                     });
                     TextView tx2=new TextView(this);
-                    tablerow1.addView(tx2);
+                    tableRow.addView(tx2);
                 }
             }
             else{
@@ -195,14 +199,16 @@ public class SleavelistActivity extends AppCompatActivity {
             final String [] lsl=leavestudentslist.split(",");
             if(i!=0){
                 for(int j=0;j<lsl.length;j++){
+                    TableRow tableRow=new TableRow(this);
+                    tableLayout1.addView(tableRow);
                     TextView tx0=new TextView(this);
-                    tablerow1.addView(tx0);
+                    tableRow.addView(tx0);
                     final TextView tx1=new TextView(this);
                     tx1.setText(lsl[j]);
-                    tablerow1.addView(tx1);
+                    tableRow.addView(tx1);
                     final Button but1=new Button(this);
                     but1.setText("查看");
-                    tablerow1.addView(but1);
+                    tableRow.addView(but1);
                     but1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -217,7 +223,7 @@ public class SleavelistActivity extends AppCompatActivity {
                         }
                     });
                     TextView tx2=new TextView(this);
-                    tablerow1.addView(tx2);
+                    tableRow.addView(tx2);
                 }
             }
             else{
@@ -226,6 +232,20 @@ public class SleavelistActivity extends AppCompatActivity {
                 TextView tx1=new TextView(this);
                 tx1.setText("无提交的请假条：");
                 tablerow1.addView(tx1);
+                Button but2=new Button(this);
+                but2.setText("退出");
+                tablerow1.addView(but2);
+                but2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(SleavelistActivity.this,bottomActivity.class);
+                        Bundle bundle=new Bundle();
+                        bundle.putString("SID",ID);
+                        bundle.putString("TYPE",TYPE);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+                });
                 TextView tx2=new TextView(this);
                 tablerow1.addView(tx2);
             }
@@ -263,14 +283,16 @@ public class SleavelistActivity extends AppCompatActivity {
                 }
                 final String st6=s6.toString();
                 if(k!=0){
+                    TableRow tableRow=new TableRow(this);
+                    tableLayout1.addView(tableRow);
                     TextView tx0=new TextView(this);
-                    tablerow1.addView(tx0);
+                    tableRow.addView(tx0);
                     TextView tx1=new TextView(this);
                     tx1.setText("您孩子的请假条");
-                    tablerow1.addView(tx1);
+                    tableRow.addView(tx1);
                     final Button but1=new Button(this);
                     but1.setText("查看");
-                    tablerow1.addView(but1);
+                    tableRow.addView(but1);
                     but1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -285,7 +307,7 @@ public class SleavelistActivity extends AppCompatActivity {
                         }
                     });
                     TextView tx2=new TextView(this);
-                    tablerow1.addView(tx2);
+                    tableRow.addView(tx2);
                 }
 
                 }
@@ -295,6 +317,20 @@ public class SleavelistActivity extends AppCompatActivity {
                 TextView tx1=new TextView(this);
                 tx1.setText("无提交的请假条：");
                 tablerow1.addView(tx1);
+                Button but2=new Button(this);
+                but2.setText("退出");
+                tablerow1.addView(but2);
+                but2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(SleavelistActivity.this,bottomActivity.class);
+                        Bundle bundle=new Bundle();
+                        bundle.putString("SID",ID);
+                        bundle.putString("TYPE",TYPE);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+                });
                 TextView tx2=new TextView(this);
                 tablerow1.addView(tx2);
             }

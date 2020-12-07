@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/sh"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LessonlistActivity"></activity>
+        <activity android:name=".CheckHomeworkActivity"></activity>
+        <activity android:name=".HomeworkResultActivity" />
+        <activity android:name=".HomeworklistActivity" />
+        <activity android:name=".AddHomeworkActivity" />
+        <activity android:name=".LessonlistActivity" />
         <activity android:name=".AddlessonActivity" />
         <activity android:name=".LessonActivity" />
         <activity android:name=".SleaveresultActivity" />

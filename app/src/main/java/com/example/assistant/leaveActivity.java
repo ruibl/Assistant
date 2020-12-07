@@ -65,6 +65,10 @@ public class leaveActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent intent=new Intent(leaveActivity.this,bottomActivity.class);
+                        Bundle bundle=new Bundle();
+                        bundle.putString("SID",ID);
+                        bundle.putString("TYPE",TYPE);
+                        intent.putExtras(bundle);
                         startActivity(intent);
                     }
                 });
