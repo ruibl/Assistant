@@ -18,6 +18,7 @@
         android:id="@+id/news"
         android:src="@drawable/news"
         android:scaleType="fitXY"
+        android:background="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="200dp">
 
@@ -34,6 +35,7 @@
         android:id="@+id/notion"
         android:src="@drawable/notice"
         android:scaleType="fitXY"
+        android:background="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="200dp">
 
@@ -45,6 +47,22 @@
         android:textSize="18dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <TableLayout
+        android:id="@+id/Homepagetablelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F9FCF9"
+        android:stretchColumns="0,3"
+        >
+
+        <TableRow
+            android:id="@+id/Homepagetablerow"
+            >
+
+        </TableRow>
+
+    </TableLayout>
+
 
 
 

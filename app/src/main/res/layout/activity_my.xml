@@ -9,6 +9,7 @@
 
     <ImageButton
         android:layout_width="match_parent"
+        android:background="@android:color/transparent"
         android:layout_height="168dp" />
 
     <TextView

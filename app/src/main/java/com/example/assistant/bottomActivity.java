@@ -16,8 +16,8 @@ public class bottomActivity extends AppCompatActivity implements View.OnClickLis
     private TextView mBtnDy1;
     private TextView mBtnDy2;
     private TextView mBtnDy3;
-    /*private String ID;
-    private String TYPE;*/
+    private String ID;
+    private String TYPE;
     FragmentManager fm;
     Fragment mfg1;
     Fragment mfg2;
@@ -33,16 +33,28 @@ public class bottomActivity extends AppCompatActivity implements View.OnClickLis
         switch (item.getItemId()){//判断我们点击的是哪一个菜单项
             case R.id.relogin_item:  //点击重新登陆
                 Intent intent1=new Intent(bottomActivity.this,loginActivity.class);
+                Bundle bundle1=new Bundle();
+                bundle1.putString("SID",ID);
+                bundle1.putString("TYPE",TYPE);
+                intent1.putExtras(bundle1);
                 startActivity(intent1);
                 break;
 
             case R.id.set_item:  //点击设置
                 Intent intent0 = new Intent(bottomActivity.this, SetActivity.class);
+                Bundle bundle0=new Bundle();
+                bundle0.putString("SID",ID);
+                bundle0.putString("TYPE",TYPE);
+                intent0.putExtras(bundle0);
                 startActivity(intent0);
                 break;
 
             case R.id.code_item:  //点击我的二维码
                 Intent intent=new Intent(bottomActivity.this,QR_codeActivity.class);
+                Bundle bundle=new Bundle();
+                bundle.putString("SID",ID);
+                bundle.putString("TYPE",TYPE);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 break;
             default:
@@ -62,10 +74,10 @@ public class bottomActivity extends AppCompatActivity implements View.OnClickLis
         mBtnDy3.setOnClickListener(this);
         Toast.makeText(getApplicationContext(),"欢迎使用一点通家校助手！",Toast.LENGTH_SHORT).show();
         mBtnDy1.performClick();
-        /*Intent intent1=getIntent();
+        Intent intent1=getIntent();
         Bundle bd=intent1.getExtras();
         ID=bd.getString("SID");
-        TYPE=bd.getString("TYPE");*/
+        TYPE=bd.getString("TYPE");
         /*System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.println(ID+TYPE);*/
         /*Bundle bundle = new Bundle();
