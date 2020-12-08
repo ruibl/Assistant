@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CP_TableLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Change_pwdActivity"
+    android:stretchColumns="0,3"
+    android:gravity="center_vertical"
+    android:background="#FAFCFA"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:text="账号密码修改" />
+
+
+    <TableRow>
+        <TextView />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="旧密码:" />
+        <EditText
+            android:id="@+id/CP_old"
+            android:layout_width="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:layout_height="wrap_content"
+            android:minWidth="150dp"/>
+        <TextView />
+    </TableRow>
+
+    <TableRow>
+        <TextView />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新密码:"
+            />
+        <EditText
+            android:id="@+id/CP_new"
+            android:layout_width="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:layout_height="wrap_content"
+            android:minWidth="150dp"
+            />
+        <TextView />
+    </TableRow>
+    <TableRow>
+        <TextView />
+
+        <Button
+            android:id="@+id/CP_enter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确认修改" />
+
+        <Button
+            android:id="@+id/CP_quit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退出"/>
+        <TextView />
+    </TableRow>
+    <TextView
+        android:id="@+id/CPResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+</TableLayout>

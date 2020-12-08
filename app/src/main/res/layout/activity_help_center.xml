@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Help_centerActivity">
+    <TextView
+        android:text="如果使用App的过程中，程序崩溃了怎么办？"
+        android:textColor="#03A9F4"
+        android:background="@drawable/blackstoke"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <TextView
+        android:text="开发者：那就关了重进吧"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+    <TextView
+        android:text="App的回退页面出现问题"
+        android:textColor="#03A9F4"
+        android:background="@drawable/blackstoke"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <TextView
+        android:text="开发者：你页面进多了"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+
+</LinearLayout>

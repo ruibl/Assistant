@@ -35,7 +35,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".Change_pwdActivity"></activity>
+        <activity android:name=".UserinfoActivity" />
+        <activity android:name=".Help_centerActivity" />
+        <activity android:name=".AboutActivity" />
         <activity android:name=".NoticeActivity" />
         <activity android:name=".NewsActivity" />
         <activity android:name=".LiveActivity" />

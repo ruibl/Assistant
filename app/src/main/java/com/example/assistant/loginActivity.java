@@ -156,7 +156,7 @@ public class loginActivity extends AppCompatActivity {
                         String [] p=pinfo.split(",");
                         if(str1.equals(p[0]) && str2.equals(p[1])){
                             Intent intent=new Intent(loginActivity.this, bottomActivity.class);
-                            Bundle bundle=new Bundle();
+                            Bundle bundle=new Bundle();Toast.makeText(getApplicationContext(),"账号或密码错误！",Toast.LENGTH_SHORT).show();
                             bundle.putString("SID",str1);
                             //bundle.putString("SPWD",str2);
                             bundle.putString("TYPE","家长");
@@ -165,7 +165,7 @@ public class loginActivity extends AppCompatActivity {
                         }
                     }
                     else {
-                        Toast.makeText(getApplicationContext(),"账号或密码错误！",Toast.LENGTH_SHORT).show();
+
                     }
 
                 }
