@@ -84,6 +84,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "Hscore text);";
         Log.i("Exo4:","createDB="+sqlHomework);
         db.execSQL(sqlHomework);
+        /*签到表*/
+        String sqlSign="CREATE TABLE Sign(" +
+                "Sno text primary key," +
+                "Sright text not null);";
+        Log.i("Exo4:","createDB="+sqlSign);
+        db.execSQL(sqlSign);
 
 
 

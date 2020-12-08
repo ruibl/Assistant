@@ -16,6 +16,8 @@
 
     <ImageButton
         android:id="@+id/news"
+        android:src="@drawable/news"
+        android:scaleType="fitXY"
         android:layout_width="match_parent"
         android:layout_height="200dp">
 
@@ -30,23 +32,20 @@
 
     <ImageButton
         android:id="@+id/notion"
+        android:src="@drawable/notice"
+        android:scaleType="fitXY"
         android:layout_width="match_parent"
         android:layout_height="200dp">
 
     </ImageButton>
 
     <TextView
-        android:text="校内活动"
+        android:text="通知"
         android:gravity="center"
         android:textSize="18dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <ImageButton
-        android:id="@+id/act"
-        android:layout_width="match_parent"
-        android:layout_height="200dp">
 
-    </ImageButton>
 
 </LinearLayout>

@@ -2,14 +2,46 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.assistant">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 允许振动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 请求网络 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 允许应用程序访问额外的位置提供命令 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> <!-- 摄像头 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 允许应用程序改变网络状态 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" /> <!-- 允许程序改变Wi-Fi连接状态 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 读取缓存数据 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 安装权限 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- 控制呼吸灯，振动器等，用于新消息提醒 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" /> <!-- 访问相机 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 挂载、反挂载外部文件系统 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 访问wifi -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" /> <!-- 读日志权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/sh1"
         android:label="一点通家校助手"
         android:roundIcon="@mipmap/sh"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".CheckHomeworkActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".NoticeActivity" />
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".LiveActivity" />
+        <activity android:name=".ReadActivity" />
+        <activity android:name=".signActivity" />
+        <activity android:name=".CheckHomeworkActivity" />
         <activity android:name=".HomeworkResultActivity" />
         <activity android:name=".HomeworklistActivity" />
         <activity android:name=".AddHomeworkActivity" />

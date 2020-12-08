@@ -35,7 +35,7 @@
 
             <ImageButton
                 android:id="@+id/imb_zy"
-                android:layout_width="55dp"
+                android:layout_width="1dip"
                 android:layout_height="130dip"
                 android:scaleType="fitCenter"
                 android:src="@drawable/zy">
@@ -44,7 +44,7 @@
 
             <ImageButton
                 android:id="@+id/imb_qj"
-                android:layout_width="52dp"
+                android:layout_width="1dip"
                 android:layout_height="130dip"
                 android:scaleType="fitXY"
                 android:src="@drawable/qj">
@@ -113,7 +113,7 @@
                 android:gravity="center"
                 />
             <TextView
-                android:text="课程资料"
+                android:text="直播课堂"
                 android:gravity="center"
                 />
             <TextView

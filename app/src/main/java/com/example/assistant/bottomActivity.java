@@ -61,6 +61,7 @@ public class bottomActivity extends AppCompatActivity implements View.OnClickLis
         mBtnDy2.setOnClickListener(this);
         mBtnDy3.setOnClickListener(this);
         Toast.makeText(getApplicationContext(),"欢迎使用一点通家校助手！",Toast.LENGTH_SHORT).show();
+        mBtnDy1.performClick();
         /*Intent intent1=getIntent();
         Bundle bd=intent1.getExtras();
         ID=bd.getString("SID");

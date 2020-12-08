@@ -125,7 +125,6 @@ public class HomeworklistActivity extends AppCompatActivity {
                                 String sql9 ="delete from Homework where Sid='"+ID+"'";
                                 Log.i("Ex04","delete="+sql9);
                                 db9.execSQL(sql9);
-
                             }
                         });
                         TextView tx2=new TextView(this);

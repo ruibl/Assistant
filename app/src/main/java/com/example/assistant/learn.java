@@ -141,15 +141,51 @@ public class learn extends Fragment {
             public void onClick(View v) {
                 /*学生点击签到可进行签到，将自己的学号和已签到写到数据库*/
                 if(TYPE.equals("学生")){
-
+                    Intent intent=new Intent(getActivity(),signActivity.class);
+                    Bundle bundle=new Bundle();
+                    bundle.putString("SID",ID);
+                    bundle.putString("TYPE",TYPE);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
                 }
                 /*教师可查看签到人数，和已签到名单*/
                 else if(TYPE.equals("教师")){
-
+                    Intent intent=new Intent(getActivity(),signActivity.class);
+                    Bundle bundle=new Bundle();
+                    bundle.putString("SID",ID);
+                    bundle.putString("TYPE",TYPE);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(getActivity().getApplicationContext(),"抱歉，该版本暂不支持家长签到的功能，敬请期待！",Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        /*阅读功能*/
+        ImageButton imb_yd=getActivity().findViewById(R.id.imb_yd);
+        imb_yd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),ReadActivity.class);
+                Bundle bundle=new Bundle();
+                bundle.putString("SID",ID);
+                bundle.putString("TYPE",TYPE);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+        /*直播课堂*/
+        ImageButton imb_wk=getActivity().findViewById(R.id.imb_wk);
+        imb_wk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),LiveActivity.class);
+                Bundle bundle=new Bundle();
+                bundle.putString("SID",ID);
+                bundle.putString("TYPE",TYPE);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }

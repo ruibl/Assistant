@@ -6,10 +6,47 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".my">
-    <TextView
-        android:text="这是我的界面"
-        android:gravity="center"
+
+    <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="168dp" />
+
+    <TextView
+        android:id="@+id/M_lesson"
+        android:text="我的课程"
+        android:gravity="center_vertical"
+        android:background="@drawable/circle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <TextView
+        android:id="@+id/M_leave"
+        android:text="请假系统"
+        android:gravity="center_vertical"
+        android:background="@drawable/circle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <TextView
+        android:id="@+id/M_select"
+        android:text="选课系统"
+        android:gravity="center_vertical"
+        android:background="@drawable/circle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <TextView
+        android:id="@+id/M_set"
+        android:text="设置"
+        android:gravity="center_vertical"
+        android:background="@drawable/circle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
 
 </LinearLayout>
