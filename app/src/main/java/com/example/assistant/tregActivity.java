@@ -81,6 +81,7 @@ public class tregActivity extends AppCompatActivity {
         String strPh=t_etPh.getText().toString();
         String strcl=t_etcl.getText().toString();
         db.execSQL(sql,new Object[]{strNo,strPw,strNa,strPh,strcl});
-        tvResult.setText("注册成功！");
+        //tvResult.setText("注册成功！");
+        Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
     }
 }

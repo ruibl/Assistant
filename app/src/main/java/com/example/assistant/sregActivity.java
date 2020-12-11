@@ -83,12 +83,9 @@ public class sregActivity extends AppCompatActivity {
         String strSPh=et_ph.getText().toString();
         String strSPwd=et_pwd.getText().toString();
 
-
         db.execSQL(sql,new Object[]{strSNo,strSPw,strSNa,strSPh,strSPwd});
 
-        /*db.execSQL(sql,new Object[]{strNa});
-        db.execSQL(sql,new Object[]{strPh});
-        db.execSQL(sql,new Object[]{strPw});*/
-        stvResult.setText("注册成功！");
+        //stvResult.setText("注册成功！");
+        Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
     }
 }

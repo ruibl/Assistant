@@ -86,6 +86,7 @@ public class pregActivity extends AppCompatActivity {
         /*db.execSQL(sql,new Object[]{strNa});
         db.execSQL(sql,new Object[]{strPh});
         db.execSQL(sql,new Object[]{strPw});*/
-        ptvResult.setText("注册成功！");
+        //ptvResult.setText("注册成功！");
+        Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
     }
 }
