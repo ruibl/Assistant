@@ -37,50 +37,39 @@ public class tregActivity extends AppCompatActivity {
         t_etcl=findViewById(R.id.t_etcl);
         tvResult=findViewById(R.id.tvResult);
         helper=new DatabaseHelper(this,"Assitant",null,2);
-        SQLiteDatabase db=helper.getWritableDatabase();
-        String sql="select TNo from Teacher where TNo='"+t_etNo.getText().toString()+"'";
-        Log.i("Ex04","query="+sql);
-        Cursor cursor=db.rawQuery(sql,null);
-        StringBuilder s2=new StringBuilder();
-        int i = 0;
-        //String Tno;
-        if(cursor!=null){
-            while(cursor.moveToNext()){
-                s2.append(cursor.getString(cursor.getColumnIndex("TNo"))) ;
-                i++;
-                System.out.println(s2);
-            }
-        }
-        if(i!=0){
-            t_but1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        t_but1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SQLiteDatabase db=helper.getWritableDatabase();
+                String sql="select TNo from Teacher where TNo='"+t_etNo.getText().toString()+"'";
+                Log.i("Ex04","query="+sql);
+                Cursor cursor=db.rawQuery(sql,null);
+                StringBuilder s2=new StringBuilder();
+                int i = 0;
+                //String Tno;
+                if(cursor!=null){
+                    while(cursor.moveToNext()){
+                        s2.append(cursor.getString(cursor.getColumnIndex("TNo"))) ;
+                        i++;
+                        System.out.println(s2);
+                    }
+                }
+                if(i!=0){
                     Toast.makeText(getApplicationContext(),"该账号已被注册！",Toast.LENGTH_SHORT).show();
                 }
-            });
-            t_but2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(tregActivity.this,loginActivity.class);
-                    startActivity(intent);
-                }
-            });
-        }
-        else {
-            t_but1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+                else {
                     insertData();
                 }
-            });
-            t_but2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(tregActivity.this,loginActivity.class);
-                    startActivity(intent);
-                }
-            });
-        }
+            }
+        });
+        t_but2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(tregActivity.this,loginActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
     private void insertData(){
         SQLiteDatabase db=helper.getWritableDatabase();

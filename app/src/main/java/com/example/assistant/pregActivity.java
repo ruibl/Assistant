@@ -36,49 +36,37 @@ public class pregActivity extends AppCompatActivity {
         cname_ed=findViewById(R.id.cname_ed);
         ptvResult=findViewById(R.id.ptvResult);
         helper=new DatabaseHelper(this,"Assitant",null,2);
-        SQLiteDatabase db=helper.getWritableDatabase();
-        String sql="select Pname from Parents where Pname='"+name_ed.getText().toString()+"'";
-        Log.i("Ex04","query="+sql);
-        Cursor cursor=db.rawQuery(sql,null);
-        StringBuilder s3=new StringBuilder();
-        int i = 0;
-        if(cursor!=null){
-            while(cursor.moveToNext()){
-                s3.append(cursor.getString(cursor.getColumnIndex("Pname"))) ;
-                i++;
-                System.out.println(s3);
-            }
-        }
-        if(i!=0){
-            p_but1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        p_but1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SQLiteDatabase db=helper.getWritableDatabase();
+                String sql="select Pname from Parents where Pname='"+name_ed.getText().toString()+"'";
+                Log.i("Ex04","query="+sql);
+                Cursor cursor=db.rawQuery(sql,null);
+                StringBuilder s3=new StringBuilder();
+                int i = 0;
+                if(cursor!=null){
+                    while(cursor.moveToNext()){
+                        s3.append(cursor.getString(cursor.getColumnIndex("Pname"))) ;
+                        i++;
+                        System.out.println(s3);
+                    }
+                }
+                if(i!=0){
                     Toast.makeText(getApplicationContext(),"该账号已被注册！",Toast.LENGTH_SHORT).show();
                 }
-            });
-            p_but2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(pregActivity.this,loginActivity.class);
-                    startActivity(intent);
-                }
-            });
-        }
-        else {
-            p_but1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+                else {
                     insertData();
                 }
-            });
-            p_but2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(pregActivity.this,loginActivity.class);
-                    startActivity(intent);
-                }
-            });
-        }
+            }
+        });
+        p_but2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(pregActivity.this,loginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     private void insertData(){
         SQLiteDatabase db=helper.getWritableDatabase();
