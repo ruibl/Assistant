@@ -152,11 +152,10 @@ public class loginActivity extends AppCompatActivity {
                     }
                     if(i!=0){
                         String pinfo=s3.toString();
-
                         String [] p=pinfo.split(",");
                         if(str1.equals(p[0]) && str2.equals(p[1])){
                             Intent intent=new Intent(loginActivity.this, bottomActivity.class);
-                            Bundle bundle=new Bundle();Toast.makeText(getApplicationContext(),"账号或密码错误！",Toast.LENGTH_SHORT).show();
+                            Bundle bundle=new Bundle();
                             bundle.putString("SID",str1);
                             //bundle.putString("SPWD",str2);
                             bundle.putString("TYPE","家长");
@@ -165,9 +164,8 @@ public class loginActivity extends AppCompatActivity {
                         }
                     }
                     else {
-
+                        Toast.makeText(getApplicationContext(),"账号或密码错误！",Toast.LENGTH_SHORT).show();
                     }
-
                 }
                 /*while(cursor.moveToNext()){
                     s.append(cursor.getString(cursor.getColumnIndex("TNo"))+"\t");

@@ -3,6 +3,7 @@ package com.example.assistant;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class sregActivity extends AppCompatActivity {
     private Button suser_but1;
@@ -36,19 +38,51 @@ public class sregActivity extends AppCompatActivity {
         stvResult=findViewById(R.id.stvResult);
 
         helper=new DatabaseHelper(this,"Assitant",null,2);
-        suser_but1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                insertSData();
+        SQLiteDatabase db=helper.getWritableDatabase();
+        String sql="select SNo from Student where SNo='"+et_No.getText().toString()+"'";
+        Log.i("Ex04","query="+sql);
+        Cursor cursor=db.rawQuery(sql,null);
+        StringBuilder s1=new StringBuilder();
+        int i = 0;
+        //String Tno;
+        if(cursor!=null){
+            while(cursor.moveToNext()){
+                s1.append(cursor.getString(cursor.getColumnIndex("SNo"))) ;
+                i++;
+                System.out.println(s1);
             }
-        });
-        suser_but2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(sregActivity.this,loginActivity.class);
-                startActivity(intent);
-            }
-        });
+        }
+        if(i!=0){
+            suser_but1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getApplicationContext(),"该账号已被注册",Toast.LENGTH_SHORT).show();
+                }
+            });
+            suser_but2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(sregActivity.this,loginActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+        else {
+            suser_but1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    insertSData();
+                }
+            });
+            suser_but2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(sregActivity.this,loginActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+        }
     }
     private void insertSData(){
         SQLiteDatabase db=helper.getWritableDatabase();

@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 public class tregActivity extends AppCompatActivity {
     private Button t_but1;
     private Button t_but2;
@@ -35,19 +37,50 @@ public class tregActivity extends AppCompatActivity {
         t_etcl=findViewById(R.id.t_etcl);
         tvResult=findViewById(R.id.tvResult);
         helper=new DatabaseHelper(this,"Assitant",null,2);
-        t_but1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                insertData();
+        SQLiteDatabase db=helper.getWritableDatabase();
+        String sql="select TNo from Teacher where TNo='"+t_etNo.getText().toString()+"'";
+        Log.i("Ex04","query="+sql);
+        Cursor cursor=db.rawQuery(sql,null);
+        StringBuilder s2=new StringBuilder();
+        int i = 0;
+        //String Tno;
+        if(cursor!=null){
+            while(cursor.moveToNext()){
+                s2.append(cursor.getString(cursor.getColumnIndex("TNo"))) ;
+                i++;
+                System.out.println(s2);
             }
-        });
-        t_but2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(tregActivity.this,loginActivity.class);
-                startActivity(intent);
-            }
-        });
+        }
+        if(i!=0){
+            t_but1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getApplicationContext(),"该账号已被注册！",Toast.LENGTH_SHORT).show();
+                }
+            });
+            t_but2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(tregActivity.this,loginActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+        else {
+            t_but1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    insertData();
+                }
+            });
+            t_but2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(tregActivity.this,loginActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
     }
     private void insertData(){
         SQLiteDatabase db=helper.getWritableDatabase();
