@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class leaveActivity extends AppCompatActivity {
     private Button leave_but1;
@@ -219,9 +220,12 @@ public class leaveActivity extends AppCompatActivity {
         String Lth=leave_edthing.getText().toString();
         String Lps="0";
         String Lts="0";
-
-
-        db.execSQL(sql,new Object[]{Lno,Lna,Lcl,Lph,Lle,Lba,Lth,Lps,Lts});
-        ltvResult.setText("提交成功！");
+        if(Lno.equals("")||Lna.equals("")||Lcl.equals("")||Lph.equals("")||Lle.equals("")||Lba.equals("")||Lth.equals("")){
+            Toast.makeText(getApplicationContext(),"请填写必要信息",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            db.execSQL(sql,new Object[]{Lno,Lna,Lcl,Lph,Lle,Lba,Lth,Lps,Lts});
+            ltvResult.setText("提交成功！");
+        }
     }
 }

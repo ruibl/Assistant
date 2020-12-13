@@ -82,10 +82,14 @@ public class sregActivity extends AppCompatActivity {
         String strSNa=et_cl.getText().toString();
         String strSPh=et_ph.getText().toString();
         String strSPwd=et_pwd.getText().toString();
-
-        db.execSQL(sql,new Object[]{strSNo,strSPw,strSNa,strSPh,strSPwd});
-
+        if(strSNo.equals("")||strSPw.equals("")||strSNa.equals("")||strSPh.equals("")||strSPwd.equals("")){
+            Toast.makeText(getApplicationContext(),"请填写必要信息",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            db.execSQL(sql,new Object[]{strSNo,strSPw,strSNa,strSPh,strSPwd});
+            Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
+        }
         //stvResult.setText("注册成功！");
-        Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
+
     }
 }

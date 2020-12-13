@@ -80,8 +80,14 @@ public class tregActivity extends AppCompatActivity {
         String strNa=t_etNa.getText().toString();
         String strPh=t_etPh.getText().toString();
         String strcl=t_etcl.getText().toString();
-        db.execSQL(sql,new Object[]{strNo,strPw,strNa,strPh,strcl});
+        if(strNo.equals("")||strPw.equals("")||strNa.equals("")||strPh.equals("")||strcl.equals("")){
+            Toast.makeText(getApplicationContext(),"请填写必要信息",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            db.execSQL(sql,new Object[]{strNo,strPw,strNa,strPh,strcl});
+            Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
+        }
         //tvResult.setText("注册成功！");
-        Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
     }
 }

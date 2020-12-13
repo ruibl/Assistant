@@ -79,14 +79,17 @@ public class pregActivity extends AppCompatActivity {
         String strSPh=phone_ed.getText().toString();
         String strSCl=cla_ed.getText().toString();
         String strSCna=cname_ed.getText().toString();
-
-
-        db.execSQL(sql,new Object[]{strSNa,strSPw,strSPh,strSCl,strSCna});
-
-        /*db.execSQL(sql,new Object[]{strNa});
+        if(strSNa.equals("")||strSPw.equals("")||strSPh.equals("")||strSCl.equals("")||strSCna.equals("")){
+            Toast.makeText(getApplicationContext(),"请填写必要信息",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            db.execSQL(sql,new Object[]{strSNa,strSPw,strSPh,strSCl,strSCna});
+            Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
+        }
+    /*db.execSQL(sql,new Object[]{strNa});
         db.execSQL(sql,new Object[]{strPh});
         db.execSQL(sql,new Object[]{strPw});*/
         //ptvResult.setText("注册成功！");
-        Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
     }
 }
