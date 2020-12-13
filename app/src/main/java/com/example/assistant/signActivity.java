@@ -42,6 +42,21 @@ public class signActivity extends AppCompatActivity {
         sign_result=findViewById(R.id.sign_result);
         if(TYPE.equals("学生")){
             sign_top.setText("学生签到系统");
+            /*已签到人数*/
+            SQLiteDatabase db1=helper.getWritableDatabase();
+            String sql1="select * from Sign";
+            Log.i("Ex04","query="+sql1);
+            Cursor cursor1=db1.rawQuery(sql1,null);
+            StringBuilder s1=new StringBuilder();
+            int k = 0;
+            if(cursor1!=null){
+                while(cursor1.moveToNext()){
+                    s1.append(cursor1.getString(cursor1.getColumnIndex("Sno"))) ;
+                    System.out.println(s1);
+                    k++;
+                }
+            }
+            sign_result.setText("当前签到人数："+k);
             /*查数据库看自己是否签到*/
             SQLiteDatabase db=helper.getWritableDatabase();
             String sql="select * from Sign where Sno='"+ID+"'and Sright='已签到'";
@@ -78,7 +93,6 @@ public class signActivity extends AppCompatActivity {
                 });
                 TextView tx2=new TextView(this);
                 signtablerow.addView(tx2);
-                sign_result.setText("当前签到人数："+i);
             }
             else{/*数据库中没有记录*/
                 Button Sign_in =new Button(this);
