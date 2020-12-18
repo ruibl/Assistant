@@ -8,7 +8,6 @@
     android:background="#FAFCFA"
     android:id="@+id/LessonlistlinearLayout"
     android:orientation="vertical">
-
     <TextView
         android:id="@+id/lessonlist_top"
         android:layout_width="match_parent"
@@ -16,8 +15,6 @@
         android:gravity="center"
         android:textSize="18sp"
         />
-
-
     <TableLayout
         android:id="@+id/lessonlisttablelayout"
         android:layout_width="wrap_content"
@@ -25,17 +22,13 @@
         android:background="#F9FCF9"
         android:stretchColumns="0,3"
         >
-
         <TableRow
             android:id="@+id/lessonlisttablerow"
             >
-
         </TableRow>
-
     </TableLayout>
     <TextView
         android:id="@+id/lea_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
 </LinearLayout>

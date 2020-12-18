@@ -1,5 +1,4 @@
 package com.example.assistant;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,8 +18,6 @@ import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
-
-
 public class loginActivity extends AppCompatActivity {
     private EditText et1;
     private EditText et2;
@@ -37,10 +34,8 @@ public class loginActivity extends AppCompatActivity {
                 //System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
                 et1=findViewById(R.id.et1);
                 et2=findViewById(R.id.et2);
-
                 String str1=et1.getText().toString();
                 String str2=et2.getText().toString();
-
                 Spinner spinner=findViewById(R.id.spinner);
                 String sp = spinner.getSelectedItem().toString();
 
@@ -189,10 +184,8 @@ public class loginActivity extends AppCompatActivity {
                     }
 
                 }*/
-
             }
         });
-
         Button b2=findViewById(R.id.but2);
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -200,17 +193,13 @@ public class loginActivity extends AppCompatActivity {
                 System.exit(0);
             }
         });
-
-
         //以下代码写在onCreate（）方法当中　　　　
         TextView textView1=findViewById(R.id.reg);
         String text1="注册";
         SpannableString spannableString1=new SpannableString(text1);
-
         spannableString1.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View view) {
-
                 Spinner spinner=findViewById(R.id.spinner);
                 String sp = spinner.getSelectedItem().toString();
 
@@ -226,19 +215,11 @@ public class loginActivity extends AppCompatActivity {
                     Intent intent=new Intent(loginActivity.this,pregActivity.class);
                     startActivity(intent);
                 }
-
-
             }
         }, 0, text1.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-
         textView1.setText(spannableString1);
         textView1.setMovementMethod(LinkMovementMethod.getInstance());
-
     }
-
-
-
 }
 
 
