@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 public class tregActivity extends AppCompatActivity {
     private Button t_but1;
     private Button t_but2;
@@ -69,7 +68,6 @@ public class tregActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
     private void insertData(){
         SQLiteDatabase db=helper.getWritableDatabase();
@@ -87,7 +85,5 @@ public class tregActivity extends AppCompatActivity {
             db.execSQL(sql,new Object[]{strNo,strPw,strNa,strPh,strcl});
             Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
         }
-        //tvResult.setText("注册成功！");
-        //Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
     }
 }

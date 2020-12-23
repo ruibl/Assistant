@@ -1,5 +1,4 @@
 package com.example.assistant;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 public class sregActivity extends AppCompatActivity {
     private Button suser_but1;
     private Button suser_but2;
@@ -23,7 +21,6 @@ public class sregActivity extends AppCompatActivity {
     private EditText et_ph;
     private EditText et_pwd;
     private TextView stvResult;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +33,6 @@ public class sregActivity extends AppCompatActivity {
         et_ph=findViewById(R.id.et_ph);
         et_pwd=findViewById(R.id.et_pwd);
         stvResult=findViewById(R.id.stvResult);
-
         helper=new DatabaseHelper(this,"Assitant",null,2);
         suser_but1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +43,6 @@ public class sregActivity extends AppCompatActivity {
                 Cursor cursor=db.rawQuery(sql,null);
                 StringBuilder s1=new StringBuilder();
                 int i = 0;
-                //String Tno;
                 if(cursor!=null){
                     while(cursor.moveToNext()){
                         s1.append(cursor.getString(cursor.getColumnIndex("SNo"))) ;
@@ -73,10 +68,8 @@ public class sregActivity extends AppCompatActivity {
     }
     private void insertSData(){
         SQLiteDatabase db=helper.getWritableDatabase();
-
         String sql="Insert into Student(SNo,SName,Sclass,Sphone,Spwd) values(?,?,?,?,?)";
         Log.i("Ex04","insert="+sql);
-
         String strSNo=et_No.getText().toString();
         String strSPw=et_Na.getText().toString();
         String strSNa=et_cl.getText().toString();
@@ -89,7 +82,5 @@ public class sregActivity extends AppCompatActivity {
             db.execSQL(sql,new Object[]{strSNo,strSPw,strSNa,strSPh,strSPwd});
             Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
         }
-        //stvResult.setText("注册成功！");
-
     }
 }

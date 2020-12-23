@@ -80,7 +80,5 @@ public class my extends Fragment {
                 startActivity(intent);
             }
         });
-
-
     }
 }

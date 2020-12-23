@@ -1,7 +1,5 @@
 package com.example.assistant;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
 public class HomeworklistActivity extends AppCompatActivity {
     private DatabaseHelper helper;
     private String ID;
@@ -23,7 +20,6 @@ public class HomeworklistActivity extends AppCompatActivity {
     private TableRow Homeworklisttablerow;
     private TextView Homeworklist_top;
     private TextView Homeworklist_result;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

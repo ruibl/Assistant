@@ -1,5 +1,4 @@
 package com.example.assistant;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 public class pregActivity extends AppCompatActivity {
     private Button p_but1;
     private Button p_but2;
@@ -73,7 +71,6 @@ public class pregActivity extends AppCompatActivity {
 
         String sql="Insert into Parents(Pname,Ppwd,Pphone,Pclass,PSname) values(?,?,?,?,?)";
         Log.i("Ex04","insert="+sql);
-
         String strSNa=name_ed.getText().toString();
         String strSPw=pwd_ed.getText().toString();
         String strSPh=phone_ed.getText().toString();
@@ -86,10 +83,5 @@ public class pregActivity extends AppCompatActivity {
             db.execSQL(sql,new Object[]{strSNa,strSPw,strSPh,strSCl,strSCna});
             Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
         }
-    /*db.execSQL(sql,new Object[]{strNa});
-        db.execSQL(sql,new Object[]{strPh});
-        db.execSQL(sql,new Object[]{strPw});*/
-        //ptvResult.setText("注册成功！");
-        //Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
     }
 }

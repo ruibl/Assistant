@@ -1,6 +1,4 @@
 package com.example.assistant;
-
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -19,7 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 public class SleavelistActivity extends AppCompatActivity {
     private DatabaseHelper helper;
     private String ID;
@@ -43,24 +40,6 @@ public class SleavelistActivity extends AppCompatActivity {
         tableLayout1=this.findViewById(R.id.tablelayout1);
         tablerow1=this.findViewById(R.id.tablerow1);
         sleavelist_top=this.findViewById(R.id.sleavelist_top);
-
-       /* if(TYPE.equals("学生")){
-            sleavelist_top.setText(TYPE+"系统");
-            Button bu_qingjia=new Button(this);
-            bu_qingjia.setText("请假");
-            linearLayout.addView(bu_qingjia);
-            bu_qingjia.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(SleavelistActivity.this,leaveActivity.class);
-                    Bundle bundle=new Bundle();
-                    bundle.putString("SID",ID);
-                    bundle.putString("TYPE",TYPE);
-                    intent.putExtras(bundle);
-                    startActivity(intent);
-                }
-            });
-        }*/
         if(TYPE.equals("学生")){
             sleavelist_top.setText(TYPE+"请假系统");
             //从数据库中查找此学生是否提交了请假条
@@ -111,8 +90,6 @@ public class SleavelistActivity extends AppCompatActivity {
                     tableRow.addView(tx2);
                 }
                 else if(li[1].equals("0") || li[2].equals("0")){
-                    /*TextView tx0=new TextView(this);
-                    tablerow1.addView(tx0);*/
                     TextView tx1=new TextView(this);
                     tx1.setText("你的请假条正在审批");
                     tablerow1.addView(tx1);
@@ -309,7 +286,6 @@ public class SleavelistActivity extends AppCompatActivity {
                     TextView tx2=new TextView(this);
                     tableRow.addView(tx2);
                 }
-
                 }
             else{
                 TextView tx0=new TextView(this);

@@ -1,5 +1,4 @@
 package com.example.assistant;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,7 +13,6 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
-
 /*这是课程的列表Activity，提供给学生选课*/
 public class LessonlistActivity extends AppCompatActivity {
     private DatabaseHelper helper;
@@ -25,8 +23,6 @@ public class LessonlistActivity extends AppCompatActivity {
     private TableRow lessonlisttablerow;
     private TextView lessonlist_top;
     private TextView lea_result;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -193,8 +189,6 @@ public class LessonlistActivity extends AppCompatActivity {
                     TextView tx2=new TextView(this);
                     tableRow.addView(tx2);
                 }
-
-
             }
             else{
                 TableRow tableRow=new TableRow(this);
@@ -225,6 +219,5 @@ public class LessonlistActivity extends AppCompatActivity {
         else if(TYPE.equals("家长")){
             lessonlist_top.setText("您的孩子所选课程");
         }
-
     }
 }

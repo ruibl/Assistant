@@ -1,5 +1,4 @@
 package com.example.assistant;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -11,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 public class bottomActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView mBtnDy1;
     private TextView mBtnDy2;
@@ -78,23 +76,6 @@ public class bottomActivity extends AppCompatActivity implements View.OnClickLis
         Bundle bd=intent1.getExtras();
         ID=bd.getString("SID");
         TYPE=bd.getString("TYPE");
-        /*System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println(ID+TYPE);*/
-        /*Bundle bundle = new Bundle();
-        bundle.putString("SID",ID);
-        bundle.putString("TYPE",TYPE);
-        //首先有一个Fragment对象 调用这个对象的setArguments(bundle)传递数据
-        System.out.println("-----------------------------------------------");
-        mfg1.setArguments(bundle);*/
-        //Activity传值，通过Bundle
-        /*Bundle bundle = new Bundle();
-        bundle.putString("SID",ID);
-        bundle.putString("TYPE",TYPE);
-        //首先有一个Fragment对象 调用这个对象的setArguments(bundle)传递数据
-        mfg1.setArguments(bundle);
-        mfg2.setArguments(bundle);
-        mfg3.setArguments(bundle);*/
-        //System.out.println("-----------------------------------------------");
     }
     @Override
     public void onClick(View v) {
@@ -107,12 +88,6 @@ public class bottomActivity extends AppCompatActivity implements View.OnClickLis
                 if(mfg1 == null){
                     mfg1 = new Homepage();
                     ts.add(R.id.fragment_container,mfg1);
-                    /*Intent intent=new Intent(bottomActivity.this, mfg1.getClass());
-                    Bundle bundle=new Bundle();
-                    bundle.putString("SID",ID);
-                    bundle.putString("TYPE",TYPE);
-                    intent.putExtras(bundle);
-                    startActivity(intent);*/
                 }else {
                     ts.show(mfg1);
                 }
@@ -122,12 +97,6 @@ public class bottomActivity extends AppCompatActivity implements View.OnClickLis
                 if(mfg2 == null){
                     mfg2 = new learn();
                     ts.add(R.id.fragment_container,mfg2);
-                    /*Intent intent=new Intent(bottomActivity.this, mfg2.getClass());
-                    Bundle bundle=new Bundle();
-                    bundle.putString("SID",ID);
-                    bundle.putString("TYPE",TYPE);
-                    intent.putExtras(bundle);
-                    startActivity(intent);*/
                 }else {
                     ts.show(mfg2);
                 }
@@ -137,12 +106,6 @@ public class bottomActivity extends AppCompatActivity implements View.OnClickLis
                 if(mfg3 == null){
                     mfg3 = new my();
                     ts.add(R.id.fragment_container,mfg3);
-                    /*Intent intent=new Intent(bottomActivity.this, mfg3.getClass());
-                    Bundle bundle=new Bundle();
-                    bundle.putString("SID",ID);
-                    bundle.putString("TYPE",TYPE);
-                    intent.putExtras(bundle);
-                    startActivity(intent);*/
                 }else {
                     ts.show(mfg3);
                 }

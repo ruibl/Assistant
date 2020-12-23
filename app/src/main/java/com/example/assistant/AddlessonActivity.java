@@ -1,7 +1,5 @@
 package com.example.assistant;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -10,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 public class AddlessonActivity extends AppCompatActivity {
     private Button al_but1;
     private Button al_but2;
@@ -22,7 +19,6 @@ public class AddlessonActivity extends AppCompatActivity {
     private TextView alResult;
     private String ID;
     private String TYPE;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,24 +56,16 @@ public class AddlessonActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
-
     private void addLesson() {
         SQLiteDatabase db=helper.getWritableDatabase();
         String sql="Insert into Lessoninfo(Lessonno,Lessonna,Lessonscore,LessonteachId) values(?,?,?,?)";
         Log.i("Ex04","insert="+sql);
-
         String strNo=Lessonno.getText().toString();
         String strNa=Lessonna.getText().toString();
         String strSc=Lessonscore.getText().toString();
         String strTid=LessonteachId.getText().toString();
-
-
         db.execSQL(sql,new Object[]{strNo,strNa,strSc,strTid});
-
-
         alResult.setText("添加成功！");
     }
 }

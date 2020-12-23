@@ -1,6 +1,4 @@
 package com.example.assistant;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,25 +11,18 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 public class learn extends Fragment {
     private String ID;
     private String TYPE;
     private TextView learn_top;
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-       // return inflater.inflate(R.layout.activity_learn, container, false);
         View view=inflater.inflate(R.layout.activity_learn, container, false);
         Intent in1=getActivity().getIntent();
         Bundle bd=in1.getExtras();
         ID=bd.getString("SID");
         TYPE=bd.getString("TYPE");
-        /*System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println(ID+TYPE);*/
         return view;
     }
     @Override
@@ -130,7 +121,6 @@ public class learn extends Fragment {
                     bundle.putString("TYPE",TYPE);
                     intent.putExtras(bundle);
                     startActivity(intent);
-                    //Toast.makeText(getActivity().getApplicationContext(),"抱歉，该版本暂不支持家长查看作业的功能，敬请期待！",Toast.LENGTH_SHORT).show();
                 }
             }
         });

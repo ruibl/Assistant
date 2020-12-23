@@ -1,5 +1,4 @@
 package com.example.assistant;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 public class leaveActivity extends AppCompatActivity {
     private Button leave_but1;
     private Button leave_but2;
@@ -30,7 +28,6 @@ public class leaveActivity extends AppCompatActivity {
     private String ID;
     private String LID;
     private String TYPE;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,14 +42,12 @@ public class leaveActivity extends AppCompatActivity {
         leave_edtback=findViewById(R.id.leave_edtback);
         leave_edthing=findViewById(R.id.leave_edthing);
         ltvResult=findViewById(R.id.ltvResult);
-
         helper=new DatabaseHelper(this,"Assitant",null,2);
         Intent in1=getIntent();
         Bundle bd=in1.getExtras();
         LID=bd.getString("LID");
         ID=bd.getString("SID");
         TYPE=bd.getString("TYPE");
-
         if(TYPE.equals("学生")){
                 leave_but1.setText("提交");
                 leave_but2.setText("退出");

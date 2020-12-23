@@ -1,5 +1,4 @@
 package com.example.assistant;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -16,7 +15,6 @@ import java.io.*;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
 public class SleaveresultActivity extends AppCompatActivity {
     private String ID;
     private String LID;
@@ -32,8 +30,6 @@ public class SleaveresultActivity extends AppCompatActivity {
     private EditText result_pt;
     private EditText result_tt;
     private Button result_but1;
-    //private Button result_but2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,53 +49,7 @@ public class SleaveresultActivity extends AppCompatActivity {
         result_pt=findViewById(R.id.result_pt);
         result_tt=findViewById(R.id.result_tt);
         result_but1=findViewById(R.id.result_but1);
-        //result_but2=findViewById(R.id.result_but2);
         helper=new DatabaseHelper(this,"Assitant",null,2);
-        /*if(TYPE.equals("学生")){
-            leave_but1.setText("提交");
-            leave_but2.setText("退出");
-            leave_but1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    insertlData();
-                }
-            });
-            leave_but2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(leaveActivity.this,bottomActivity.class);
-                    startActivity(intent);
-                }
-            });
-        }
-        else if(TYPE.equals("教师")){
-            leave_but1.setText("同意");
-            leave_but2.setText("不同意");
-            leave_but1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    SQLiteDatabase db=helper.getWritableDatabase();
-                    String sql="update Leave set Lps='同意' where LNo='"+leave_edno.getText().toString()+"'";
-                    Log.i("Ex04","update="+sql);
-                    db.execSQL(sql);
-                    ltvResult.setText("批改成功！");
-                }
-            });
-            leave_but2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    SQLiteDatabase db=helper.getWritableDatabase();
-                    String sql="update Leave set Lps='不同意' where LNo='"+leave_edno.getText().toString()+"'";
-                    Log.i("Ex04","update="+sql);
-                    db.execSQL(sql);
-                    ltvResult.setText("批改成功！");
-                }
-            });
-        }
-        else{
-
-
-        }*/
         //从数据库中查找此学生是否提交了请假条
         SQLiteDatabase db=helper.getWritableDatabase();
         String sql="select * from Leave where Lno='"+LID+"'";
@@ -158,7 +108,6 @@ public class SleaveresultActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-
         }
     }
     public void save(String inputText){

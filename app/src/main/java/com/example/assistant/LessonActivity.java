@@ -1,5 +1,4 @@
 package com.example.assistant;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
 public class LessonActivity extends AppCompatActivity {
     private DatabaseHelper helper;
     private String ID;
@@ -23,7 +21,6 @@ public class LessonActivity extends AppCompatActivity {
     private TableRow Lessontablerow;
     private TextView sLesson_top;
     private TextView laresult;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

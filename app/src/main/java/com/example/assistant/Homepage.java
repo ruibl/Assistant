@@ -8,7 +8,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +17,6 @@ import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
 public class Homepage extends Fragment {
     private DatabaseHelper helper;
     private String ID;
@@ -35,9 +33,7 @@ public class Homepage extends Fragment {
         ID=bd.getString("SID");
         TYPE=bd.getString("TYPE");
         return view;
-
     }
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
