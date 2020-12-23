@@ -140,7 +140,7 @@ public class Change_pwdActivity extends AppCompatActivity {
                     }
                     if(CP_old.getText().toString().equals(s3.toString())){
                         SQLiteDatabase db1=helper.getWritableDatabase();
-                        String sql1="update Teacher set Ppwd='"+CP_new.getText().toString()+"' where Pname='"+ID+"'";
+                        String sql1="update Parents set Ppwd='"+CP_new.getText().toString()+"' where Pname='"+ID+"'";
                         Log.i("Ex04","update="+sql1);
                         db1.execSQL(sql1);
                         CPResult.setText("修改成功！");
